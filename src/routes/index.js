@@ -36,6 +36,7 @@ async function callChatGPT(prompt) {
 
   try {
     const response = await axios.post(url, data, { headers });
+    console.log(response, 'Response from GPT')
     const result = response.data.choices[0].message.content;
     return result;
   } catch (error) {
@@ -50,11 +51,13 @@ async function callChatGPT(prompt) {
 // API to call chat GPT
 router.post('/api/menu-data-recommendation', (req, res) => {
   try { 
+    console.log(req, 'Request received')
     const prompt = req?.body?.prompt
     if(!prompt) {
       res.status(400).send({ message: "Invalid Prompt" })
     }
     const result =  callChatGPT(prompt)
+    console.log(result, 'Result to client')
     res.status(200).send(result)
   } catch (error) {
     res.status(400).send({ message: error})
