@@ -1,8 +1,19 @@
+
+const axios = require("axios");
+const dotenv = require("dotenv");
 const express = require('express');
+
+// Load environment variables from .env file
+dotenv.config();
+
+// OpenAI API key
+const apiKey = process.env.OPENAI_API_KEY;
+
 const router = express.Router();
 
 // Basic API endpoint
 router.get('/api/hello', (req, res) => {
+  console.log(apiKey, 'open AI')
   res.json({ message: 'Hello, World!' });
 });
 
