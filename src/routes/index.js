@@ -49,14 +49,14 @@ async function callChatGPT(prompt) {
 }
 
 // API to call chat GPT
-router.post('/api/menu-data-recommendation', (req, res) => {
+router.post('/api/menu-data-recommendation', async (req, res) => {
   try { 
     console.log(req?.body?.prompt, 'Request received')
     const prompt = req?.body?.prompt
     if(!prompt) {
       res.status(400).send({ message: "Invalid Prompt" })
     }
-    const result =  callChatGPT(prompt)
+    const result =  await callChatGPT(prompt)
     console.log(result, 'Result to client')
     res.status(200).send(result)
   } catch (error) {
