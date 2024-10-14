@@ -27,7 +27,7 @@ async function callChatGPT(prompt) {
   };
 
   const data = {
-    model: "gpt-4o-mini",
+    model: "gpt-3.5-turbo",
     messages: [
       { role: "system", content: "You are a helpful assistant." },
       { role: "user", content: prompt },
@@ -36,8 +36,8 @@ async function callChatGPT(prompt) {
 
   try {
     const response = await axios.post(url, data, { headers });
-    console.log(response, 'Response from GPT')
     const result = response.data.choices[0].message.content;
+    console.log(result, 'Response from GPT')
     return result;
   } catch (error) {
     console.error(
@@ -51,7 +51,7 @@ async function callChatGPT(prompt) {
 // API to call chat GPT
 router.post('/api/menu-data-recommendation', (req, res) => {
   try { 
-    console.log(req, 'Request received')
+    console.log(req?.body?.prompt, 'Request received')
     const prompt = req?.body?.prompt
     if(!prompt) {
       res.status(400).send({ message: "Invalid Prompt" })
