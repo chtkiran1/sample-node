@@ -81,7 +81,7 @@ async function callDalle(prompt) {
 router.post("/api/menu-data-recommendation", async (req, res) => {
   try {
     console.log(req?.body?.prompt, "Request received");
-    const prompt = ideasPrompt;
+    const prompt = req?.body?.prompt;
     if (!prompt) {
       res.status(400).send({ message: "Invalid Prompt" });
     }
@@ -96,7 +96,8 @@ router.post("/api/menu-data-recommendation", async (req, res) => {
 // API to generate image
 router.post("/api/menu-data-product-image", async (req, res) => {
   try {
-    const prompt = firstPrompt;
+    console.log(req?.body?.prompt, "Request received");
+    const prompt =req?.body?.prompt;
     if (!prompt) {
       res.status(400).send({ message: "Invalid Prompt" });
     }
