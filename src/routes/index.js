@@ -1,66 +1,62 @@
 const axios = require("axios");
 const dotenv = require("dotenv");
 const express = require("express");
-const firstPrompt = `Imagine you are part of the innovation team at a CPG company. Your goal is to create new innovative products consumers will love. The demographic you are targeting are \`Gen Z\` and \`Millenials\`.
+const firstPrompt = `Can you take this idea - 
+Based on the attributes and inspiration provided, here is a concept for an innovative juice blend that incorporates
+blood orange, targeting the Gen Z and Millennial demographic.
 
-Incorporate the following fruits into a trending \`Juice blends\`.
+### Product Concept: Dole 100% Juice Blend - Blood Orange Sunshine
 
-Fruit: \`Blood Orange\`
+#### Product Details:
+**Blend Composition:**
+- Blood Orange
+- Pineapple
+- Passion Fruit
+- Mango
+- A hint of Ginger
 
-The fruit cup should have the following attributes
-Taste: \`Sweet\`
-Aroma: \`Citrusy\`
-Texture: \`Juicy\`
+**Flavor Profile:**
+- **Taste:** Delightfully sweet and tangy blood orange prominently features a blend of tropical sweetness from ripe
+pineapple and mango, with a zesty finish from passion fruit, making it a refreshing and vibrant juice option.
+- **Aroma:** The aroma is bursting with citrus notes from blood orange, combined with a tropical fragrance that invites
+you to take a sip.
+- **Texture:** Juicy consistency that enlivens your palate with every sip, enhanced with a slight pulp for a more
+fruit-like experience.
 
-Here are some examples of our current fruit cups for inspiration:
+**Nutritional Benefits:**
+- **No Added Sugar:** Made from 100% juice with natural sugars from the fruits only.
+- **Excellent Source of Vitamin C:** Boosts the immune system and promotes healthy skin.
+- **Antioxidant Rich:** Blood oranges are particularly high in anthocyanins, which provide additional health benefits.
 
-Dole:
+**Sustainability Commitment:**
+- **Eco-Friendly Packaging:** Recyclable carton made from sustainable sources.
+- **No Artificial Ingredients:** Formula contains no artificial flavors or preservatives; just pure, real fruit juice.
 
-1] Product: Dole 100% Juice Blend, Orange Strawberry Banana Flavored, 59 Fl Oz Carton
+**Targeting Gen Z and Millennials:**
+- **Trendy and Visually Appealing:** Featuring vibrant packaging with artistic designs that highlight the bold colors of
+the ingredients.
+- **Instagrammable:** The drink’s color and presentation make it perfect for social media sharing, appealing to the
+visual-driven nature of younger consumers.
+- **Versatile Applications:** Can be enjoyed as a refreshing drink on its own, used as a mixer in cocktails, or blended
+into smoothie bowls.
 
-Product Details:"Dole No Sugar Added Orange Strawberry Banana Fruit Juice, Flavored Blend of Apple, Orange, Pineapple, Banana, and Strawberry Juices from Concentrate with Other Natural Flavors and Ingredients Every Glass of Dole 100% Juice Contains: No added sugar or sweeteners. No artificial flavors. Not a Low Calorie Food. Just one 8 fluid ounce glass of Dole 100% juice provides: Two servings of fruit, Excellent source of vitamin C. No high fructose corn syrup.
-Proud to be 100% juice
-Dole 100% fruit juice contains only sugars from the real fruit
-No high fructose corn syrup
-No added sugar or sweeteners
-No artificial flavors
-info:
+#### Marketing Ideas:
+- **Social Media Campaign:** Create visually engaging content showcasing the juice blend in various settings (at brunch,
+on-the-go, etc.) to encourage sharing among friends.
+- **Influencer Partnerships:** Collaborate with wellness and lifestyle influencers to promote the product as a healthy,
+trendy beverage choice.
+- **Sampling Events:** Host tastings at popular cafes and events to allow consumers to experience the unique flavor
+profile firsthand.
 
-Image
+### Visual Mockup:
+![Blood Orange Sunshine Juice Blend](https://via.placeholder.com/400x600.png?text=Blood+Orange+Sunshine+Juice+Blend)
+*(Image is for illustrative purposes only)*
 
-https://i5.walmartimages.com/seo/Dole-Orange-Strawberry-Banana-59z_dbb24fe4-bd1d-4575-8c6c-e51713df36b9.8020fd1fab79a42ae2f8a1bd0b527b5c.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF
+This innovative juice blend, Blood Orange Sunshine, leverages the unique flavor and visual appeal of blood oranges,
+while incorporating other tropical flavors that resonate with the preferences of Gen Z and Millennials.
 
-2] Product: Dole 100% Juice Orange Strawberry Banana Chilled - 59 Fl. Oz.
-
-Product Details: Dole No Sugar Added Orange Strawberry Banana Fruit Juice, Flavored Blend of Apple, Orange, Pineapple, Banana and Strawberry Juices from Concentrate with Other Natural Flavors and Ingredients Every Glass of Dole 100% Juice Contains: No added sugar or sweeteners. No artificial flavors. Not a Low Calorie Food. Just one 8 fluid ounce glass of Dole 100% juice provides: Two servings of fruit, Excellent source of vitamin C. No high fructose corn syrup.
-
-Image
-
-https://images.albertsons-media.com/is/image/ABS/960275568-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available
-
-
-3] Product: Dole 100% Juice Flavored Blend Of Juices Orange Peach Mango 59 Fl Oz
-
-Product Details: Flavored Blend of Apple, Orange, Pineapple, Grape, Peach and Mango Juices from Concentrate with Other Natural Flavors and Ingredients
-Dole 100% Fruit Juice contains only sugars from the real fruit. :)
-
-This intense combination made with the juice of oranges, peaches and mangos will take you for a walk on the wild side of adventurous fruit flavor.
-
-No Sugar Added*
-*Not a Low Calorie Food
-See Nutrition Facts to further information on sugar and calorie content
-
-Two servings of fruit**
-**Per 8 fl. oz. serving. Under USDA's Dietary Guidelines, 4 fl 0z. of 100% juice = 1 serving of fruit. The guidelines recommend that you get a majority of your dally fruit servings from whole fruit.
-100% juice
-No added sugar or sweeteners
-No high fructose corn syrup
-No artificial flavors
-An excellent source of Vitamin C
-
-Image
-
-https://i5.walmartimages.com/seo/Dole-Orange-Peach-Mango-59z_0aec7733-9461-47e4-81f5-a4be64082b6c.f765099dcfc73e62762c668adeb41a30.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF
+Use the attached examples and give me a product design with the same styling and also contains a cardboard sleeve packaging.
+Design a product packaging for above mentioned idea, closely matching the style of the images. The packaging should hold 6 cups. Ensure the design maintains a modern, fresh look while closely resembling existing Dole product packaging.
 `;
 
 // Load environment variables from .env file
@@ -87,7 +83,7 @@ async function callChatGPT(prompt) {
   };
 
   const data = {
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     messages: [
       { role: "system", content: "You are a helpful assistant." },
       { role: "user", content: prompt },
