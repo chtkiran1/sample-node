@@ -1,4 +1,4 @@
-export const firstPrompt = `Imagine you are part of the innovation team at a CPG company. Your goal is to create new innovative products consumers will love. The demographic you are targeting are \`Gen Z\` and \`Millenials\`.
+const prompt = `Imagine you are part of the innovation team at a CPG company. Your goal is to create new innovative products consumers will love. The demographic you are targeting are \`Gen Z\` and \`Millenials\`.
 
 Incorporate the following fruits into a trending \`fruit cup\`.
 
@@ -52,3 +52,5 @@ Image
 
 https://www.kroger.com/product/images/large/front/0003890003032
 `;
+
+module.exports = prompt

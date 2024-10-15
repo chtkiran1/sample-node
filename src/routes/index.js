@@ -1,8 +1,9 @@
 
-import { firstPrompt } from "../prompt";
-import axios from "axios";
-import dotenv from "dotenv";
-import express from "express"
+
+const axios = require("axios");
+const dotenv = require("dotenv");
+const express = require('express');
+const firstPrompt = require('./prompt')
 
 // Load environment variables from .env file
 dotenv.config();
