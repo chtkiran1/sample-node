@@ -55,7 +55,7 @@ profile firsthand.
 This innovative juice blend, Blood Orange Sunshine, leverages the unique flavor and visual appeal of blood oranges,
 while incorporating other tropical flavors that resonate with the preferences of Gen Z and Millennials.
 
-Use the attached examples and give me a product design with the same styling and also contains a cardboard sleeve packaging.
+Use the attached examples and give me an image with the same styling and also contains a cardboard sleeve packaging.
 Design a product packaging for above mentioned idea, closely matching the style of the images. The packaging should hold 6 cups. Ensure the design maintains a modern, fresh look while closely resembling existing Dole product packaging.
 `;
 
