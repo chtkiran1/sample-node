@@ -1,7 +1,7 @@
 const axios = require("axios");
 const dotenv = require("dotenv");
 const express = require("express");
-const ideasPrompt = "";
+const { generateIdeaPrompt, generateImagePrompt } = require("../utils.js")
 
 // Load environment variables from .env file
 dotenv.config();
@@ -80,8 +80,8 @@ async function callDalle(prompt) {
 // API to call chat GPT
 router.post("/api/menu-data-recommendation", async (req, res) => {
   try {
-    console.log(req?.body?.prompt, "Request received");
-    const prompt = req?.body?.prompt;
+    const prompt = generateIdeaPrompt(req?.body?.productDetails)
+    console.log(prompt, "Recommendation prompt");
     if (!prompt) {
       res.status(400).send({ message: "Invalid Prompt" });
     }
@@ -97,7 +97,8 @@ router.post("/api/menu-data-recommendation", async (req, res) => {
 router.post("/api/menu-data-product-image", async (req, res) => {
   try {
     console.log(req?.body?.prompt, "Request received");
-    const prompt =req?.body?.prompt;
+    const prompt = req?.body?.prompt;
+
     if (!prompt) {
       res.status(400).send({ message: "Invalid Prompt" });
     }
