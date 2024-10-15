@@ -1,4 +1,6 @@
 
+import { firstPrompt } from "../prompt";
+
 const axios = require("axios");
 const dotenv = require("dotenv");
 const express = require('express');
@@ -52,7 +54,7 @@ async function callChatGPT(prompt) {
 router.post('/api/menu-data-recommendation', async (req, res) => {
   try { 
     console.log(req?.body?.prompt, 'Request received')
-    const prompt = req?.body?.prompt
+    const prompt = firstPrompt
     if(!prompt) {
       res.status(400).send({ message: "Invalid Prompt" })
     }
