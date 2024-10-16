@@ -89,7 +89,7 @@ router.post("/api/menu-data-recommendation", async (req, res) => {
     }
     const result = await callChatGPT(prompt);
     console.log(result, "Result to client");
-    res.status(200).send({ response: result });
+    res.status(200).send({ details: result });
   } catch (error) {
     res.status(400).send({ message: error });
   }
@@ -106,7 +106,7 @@ router.post("/api/menu-data-product-image", async (req, res) => {
     }
     const result = await callDalle(prompt);
     console.log(result, "Result to client");
-    res.status(200).send(result);
+    res.status(200).send({url: result});
   } catch (error) {
     res.status(400).send({ message: error });
   }
