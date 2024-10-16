@@ -89,7 +89,7 @@ router.post("/api/menu-data-recommendation", async (req, res) => {
     }
     const result = await callChatGPT(prompt);
     console.log(result, "Result to client");
-    res.status(200).send(result);
+    res.status(200).send({ response: result });
   } catch (error) {
     res.status(400).send({ message: error });
   }
