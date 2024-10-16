@@ -65,7 +65,7 @@ async function callDalle(prompt) {
   const data = {
     prompt,
     n: 1, // Number of images to generate
-    size: "1024x1024", // Image resolution
+    size: "400x400", // Image resolution
   };
 
   try {
