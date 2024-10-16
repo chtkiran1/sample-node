@@ -104,8 +104,7 @@ router.post("/api/menu-data-recommendation", async (req, res) => {
 router.post("/api/menu-data-product-image", async (req, res) => {
   try {
     console.log(req?.body?.prompt, "Request received");
-    const prompt = req?.body?.prompt;
-
+    const prompt = generateImagePrompt(req?.body?.prompt);
     if (!prompt) {
       res.status(400).send({ message: "Invalid Prompt" });
     }

@@ -1,11 +1,5 @@
 // constants.js
 module.exports = {
-  IMAGE_SAMPLE_PROMPT: `Can you take the following idea and give me a product design with the same styling and also contains a cardboard sleeve packaging.
-  Design a product packaging for Dole® Fruit Parfaits® Dragonfruit & Yogurt Crunch Cups, closely matching the style of the images. 
-  The packaging should hold 6 cups. Ensure the design maintains a modern, fresh look while closely resembling existing product packaging.
- 
-  ***producy_idea***
-  `,
   PRODUCT_IDEAS: {
     juiceBlends: [
       `Name: Dole 100% Juice Blend, Orange Strawberry Banana Flavored, 59 Fl Oz Carton
