@@ -110,7 +110,7 @@ router.post("/api/menu-data-product-image", async (req, res) => {
     }
     const result = await callDalle(prompt);
     console.log(result, "Result to client");
-    res.status(200).send({url: "works"});
+    res.status(200).send({url: result});
   } catch (error) {
     res.status(400).send({ message: error });
   }
