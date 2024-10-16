@@ -23,6 +23,7 @@ async function callChatGPT(prompt) {
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${apiKey}`,
+    "Accept": "application/json"
   };
 
   const data = {
@@ -58,6 +59,7 @@ async function callDalle(prompt) {
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${apiKey}`,
+    "Accept": "application/json"
   };
 
   const data = {

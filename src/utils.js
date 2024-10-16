@@ -5,7 +5,7 @@ const { PRODUCT_IDEAS } = require("./constants");
 module.exports = {
   generateIdeaPrompt: function (params) {
     const { productLine, ingredient, taste, aroma, texture } = params;
-    const productExamples = PRODUCT_IDEAS[productLine]
+    const productExamples = PRODUCT_IDEAS[productLine];
 
     return `Imagine you are part of the innovation team at a CPG company. 
     Your goal is to create new innovative products consumers will love. 
@@ -23,7 +23,7 @@ module.exports = {
     Here are some examples of our current ${productLine} for inspiration:
     
     ${productExamples}
-    `
+    `;
   },
   generateImagePrompt: function () {
     return "";
