@@ -70,12 +70,17 @@ async function callDalle(prompt) {
 
   try {
     const response = await axios.post(url, data, { headers });
+    console.log("Generated Image URL response:", response);
     // Get the generated image URL
     const imageUrl = response.data.data[0].url;
     console.log("Generated Image URL:", imageUrl);
     return imageUrl;
   } catch (error) {
-    console.error("Error generating image:", error);
+    console.error(
+      "Error calling ChatGPT API:",
+      error.response ? error.response.data : error.message
+    );
+    throw error;
   }
 }
 
@@ -106,7 +111,7 @@ router.post("/api/menu-data-product-image", async (req, res) => {
     }
     const result = await callDalle(prompt);
     console.log(result, "Result to client");
-    res.status(200).send({url: result});
+    res.status(200).send({url: "works"});
   } catch (error) {
     res.status(400).send({ message: error });
   }
