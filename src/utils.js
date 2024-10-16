@@ -30,8 +30,8 @@ module.exports = {
   },
   generateImagePrompt: function (prompt) {
     return `Can you take the following idea and give me a product design with the same styling and also contains a cardboard sleeve packaging.
-    Design a product packaging for the below mentioned product.
-    Ensure the design maintains a modern, fresh look while closely resembling existing product packaging of the brand.
+    Design a product packaging for the below mentioned product with the brand name Dole
+    Ensure the design maintains a modern, fresh look while closely resembling existing product packaging of Dole.
    
     ${prompt}
     `;
