@@ -66,7 +66,7 @@ async function callDalle(prompt) {
     prompt,
     model: "dall-e-3",
     n: 1, // Number of images to generate
-    size: "512x512", // Image resolution
+    size: "1024x1024", // Image resolution
   };
 
   try {
