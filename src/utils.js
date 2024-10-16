@@ -24,7 +24,7 @@ module.exports = {
     
     ${productExamples}
 
-    Please return a plain string format without any markdown or html
+    Please return a plain string format without any markdown or html in less than a 1000 words
     `;
   },
   generateImagePrompt: function (prompt) {
