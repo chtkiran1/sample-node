@@ -29,7 +29,7 @@ module.exports = {
     `;
   },
   generateImagePrompt: function (prompt) {
-    return `Generate an image of fruit cups of the brand "Dole" with the following description and name. The text should be clearly visible 
+    return `Generate an image of Juice box of the brand "Dole" with the following description and name. The text should be clearly visible 
    
     ${prompt}
     `;
