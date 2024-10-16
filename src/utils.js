@@ -24,7 +24,7 @@ module.exports = {
     
     ${productExamples}
 
-    Please return a description of this new product in less than a 500 words
+    Please return a description of this new product in less than a 500 characters
     `;
   },
   generateImagePrompt: function (prompt) {
